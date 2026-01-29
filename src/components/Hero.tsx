@@ -18,7 +18,7 @@ function Hero() {
           <div className="mb-8 inline-block">
             <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 p-1 shadow-2xl overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                src="/profile.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full"
               />

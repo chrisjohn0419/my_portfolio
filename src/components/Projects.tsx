@@ -1,6 +1,10 @@
 import { ExternalLink, Github, Folder } from 'lucide-react';
 
-function Projects() {
+interface ProjectsProps {
+  darkMode?: boolean;
+}
+
+function Projects({ darkMode = false }: ProjectsProps) {
   const projects = [
     {
       title: 'E-Commerce Platform',
@@ -41,14 +45,14 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 bg-white">
+    <section id="projects" className={`py-20 px-6 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+<h2 className={`text-4xl md:text-5xl font-bold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-4`}>
             Featured Projects
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
-          <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+<p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} mt-4 max-w-2xl mx-auto`}>
             Here are some of my recent projects that showcase my skills and experience
           </p>
         </div>
@@ -57,18 +61,18 @@ function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+              className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group ${darkMode ? 'bg-gray-800' : 'bg-slate-50'}`}
             >
               <div className="relative h-48 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center overflow-hidden">
                 <Folder size={80} className="text-white/20 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
+<h3 className={`text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors ${darkMode ? 'text-gray-100' : 'text-slate-800'}`}>
                   {project.title}
                 </h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
+                <p className={`mb-4 leading-relaxed ${darkMode ? 'text-gray-400' : 'text-slate-600'}`}>
                   {project.description}
                 </p>
 
@@ -76,7 +80,7 @@ function Projects() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                      className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode ? 'bg-blue-900/50 text-blue-300' : 'bg-blue-50 text-blue-700'}`}
                     >
                       {tech}
                     </span>
@@ -88,7 +92,7 @@ function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors"
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${darkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-slate-800 text-white hover:bg-slate-700'}`}
                   >
                     <Github size={18} />
                     <span className="text-sm font-medium">Code</span>

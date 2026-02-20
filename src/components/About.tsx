@@ -1,11 +1,15 @@
 import { User, Heart, Code, Briefcase } from 'lucide-react';
 
-function About() {
+interface AboutProps {
+  darkMode?: boolean;
+}
+
+function About({ darkMode = false }: AboutProps) {
   return (
-    <section id="about" className="py-20 px-6 bg-white">
+    <section id="about" className={`py-20 px-6 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+<h2 className={`text-4xl md:text-5xl font-bold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-4`}>
             About Me
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
@@ -14,12 +18,12 @@ function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="flex items-start gap-4 group">
-              <div className="p-3 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
+<div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-blue-900/50 group-hover:bg-blue-800/50' : 'bg-blue-50 group-hover:bg-blue-100'}`}>
                 <User className="text-blue-600" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">Background</h3>
-                <p className="text-slate-600 leading-relaxed">
+<h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Background</h3>
+                <p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} leading-relaxed`}>
                   Recent graduate with a Bachelor's degree in Computer Science. Passionate about
                   creating innovative solutions and constantly learning new technologies.
                 </p>
@@ -27,12 +31,12 @@ function About() {
             </div>
 
             <div className="flex items-start gap-4 group">
-              <div className="p-3 bg-cyan-50 rounded-lg group-hover:bg-cyan-100 transition-colors">
+<div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-cyan-900/50 group-hover:bg-cyan-800/50' : 'bg-cyan-50 group-hover:bg-cyan-100'}`}>
                 <Heart className="text-cyan-600" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">Interests</h3>
-                <p className="text-slate-600 leading-relaxed">
+<h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Interests</h3>
+                <p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} leading-relaxed`}>
                   Enthusiastic about web development, UI/UX design, and building applications that
                   make a positive impact. Love exploring new frameworks and staying updated with
                   industry trends.
@@ -41,12 +45,12 @@ function About() {
             </div>
 
             <div className="flex items-start gap-4 group">
-              <div className="p-3 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
+<div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-blue-900/50 group-hover:bg-blue-800/50' : 'bg-blue-50 group-hover:bg-blue-100'}`}>
                 <Code className="text-blue-600" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">Philosophy</h3>
-                <p className="text-slate-600 leading-relaxed">
+<h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Philosophy</h3>
+                <p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} leading-relaxed`}>
                   Believe in writing clean, maintainable code and creating user experiences that
                   are both beautiful and functional. Always eager to collaborate and learn from others.
                 </p>
@@ -56,8 +60,8 @@ function About() {
 
           <div className="relative">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-2xl bg-slate-200 flex items-center justify-center">
-                <Briefcase size={120} className="text-slate-400" />
+<div className={`w-full h-full rounded-2xl flex items-center justify-center ${darkMode ? 'bg-gray-800' : 'bg-slate-200'}`}>
+                <Briefcase size={120} className={darkMode ? 'text-gray-600' : 'text-slate-400'} />
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl opacity-20 blur-2xl" />

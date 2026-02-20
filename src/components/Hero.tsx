@@ -48,7 +48,6 @@ function useTypingSequence(fullName: string, flipText: string, startDelay: numbe
 
 function Hero({ darkMode }: HeroProps) {
   const [showContent, setShowContent] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const fullName = "John Christian Los Baños";
   const flipText = "Welcome to My Portfolio";
   
@@ -177,10 +176,9 @@ function Hero({ darkMode }: HeroProps) {
                   : 'bg-white text-slate-700'
               }`}
             >
-              View My Work
+View My Work
             </button>
           </div>
-        </div>
 
         <a
           href="/Resume.pdf"
@@ -191,10 +189,10 @@ function Hero({ darkMode }: HeroProps) {
               : 'bg-white text-slate-700 hover:bg-slate-100 hover:text-blue-600'
           }`}
         >
-          Resume <ArrowDown size={18} />
+Resume <ArrowDown size={18} />
         </a>
 
-
+      </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { User, Heart, Code, Briefcase } from 'lucide-react';
+import { User, Heart, Code } from 'lucide-react';
 
 interface AboutProps {
   darkMode?: boolean;
@@ -9,7 +9,7 @@ function About({ darkMode = false }: AboutProps) {
     <section id="about" className={`py-20 px-6 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-<h2 className={`text-4xl md:text-5xl font-bold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-4`}>
+          <h2 className={`text-4xl md:text-5xl font-bold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-4`}>
             About Me
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
@@ -18,11 +18,11 @@ function About({ darkMode = false }: AboutProps) {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="flex items-start gap-4 group">
-<div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-blue-900/50 group-hover:bg-blue-800/50' : 'bg-blue-50 group-hover:bg-blue-100'}`}>
+              <div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-blue-900/50 group-hover:bg-blue-800/50' : 'bg-blue-50 group-hover:bg-blue-100'}`}>
                 <User className="text-blue-600" size={24} />
               </div>
               <div>
-<h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Background</h3>
+                <h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Background</h3>
                 <p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} leading-relaxed`}>
                   Recent graduate with a Bachelor's degree in Computer Science. Passionate about
                   creating innovative solutions and constantly learning new technologies.
@@ -31,11 +31,11 @@ function About({ darkMode = false }: AboutProps) {
             </div>
 
             <div className="flex items-start gap-4 group">
-<div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-cyan-900/50 group-hover:bg-cyan-800/50' : 'bg-cyan-50 group-hover:bg-cyan-100'}`}>
+              <div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-cyan-900/50 group-hover:bg-cyan-800/50' : 'bg-cyan-50 group-hover:bg-cyan-100'}`}>
                 <Heart className="text-cyan-600" size={24} />
               </div>
               <div>
-<h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Interests</h3>
+                <h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Interests</h3>
                 <p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} leading-relaxed`}>
                   Enthusiastic about web development, UI/UX design, and building applications that
                   make a positive impact. Love exploring new frameworks and staying updated with
@@ -45,11 +45,11 @@ function About({ darkMode = false }: AboutProps) {
             </div>
 
             <div className="flex items-start gap-4 group">
-<div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-blue-900/50 group-hover:bg-blue-800/50' : 'bg-blue-50 group-hover:bg-blue-100'}`}>
+              <div className={`p-3 rounded-lg transition-colors ${darkMode ? 'bg-blue-900/50 group-hover:bg-blue-800/50' : 'bg-blue-50 group-hover:bg-blue-100'}`}>
                 <Code className="text-blue-600" size={24} />
               </div>
               <div>
-<h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Philosophy</h3>
+                <h3 className={`text-xl font-semibold ${darkMode ? 'text-gray-100' : 'text-slate-800'} mb-2`}>Philosophy</h3>
                 <p className={`${darkMode ? 'text-gray-400' : 'text-slate-600'} leading-relaxed`}>
                   Believe in writing clean, maintainable code and creating user experiences that
                   are both beautiful and functional. Always eager to collaborate and learn from others.
@@ -58,14 +58,18 @@ function About({ darkMode = false }: AboutProps) {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-1 shadow-2xl">
-<div className={`w-full h-full rounded-2xl flex items-center justify-center ${darkMode ? 'bg-gray-800' : 'bg-slate-200'}`}>
-                <Briefcase size={120} className={darkMode ? 'text-gray-600' : 'text-slate-400'} />
+          <div className="relative w-full h-80" style={{ perspective: '1000px' }}>
+            <div className="carousel-container">
+              <div className="carousel-item" style={{ '--i': 0 } as React.CSSProperties}>
+                <img src="/images/pic1.jpg" alt="pic1" className="w-full h-full object-cover rounded-xl shadow-lg" />
+              </div>
+              <div className="carousel-item" style={{ '--i': 1 } as React.CSSProperties}>
+                <img src="/images/pic2.jpg" alt="pic2" className="w-full h-full object-cover rounded-xl shadow-lg" />
+              </div>
+              <div className="carousel-item" style={{ '--i': 2 } as React.CSSProperties}>
+                <img src="/images/pic3.jpg" alt="pic3" className="w-full h-full object-cover rounded-xl shadow-lg" />
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl opacity-20 blur-2xl" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl opacity-20 blur-2xl" />
           </div>
         </div>
       </div>

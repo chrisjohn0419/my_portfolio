@@ -6,4 +6,9 @@ export default {
     extend: {},
   },
   plugins: [],
+  
+  extend: {
+    animation: {
+      'spin-slow': 'spin 20s linear infinite',}
+    },
 };

@@ -76,6 +76,7 @@ function Hero({ darkMode }: HeroProps) {
       <div className="container mx-auto text-center">
         <div className={`transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="mb-8 inline-block">
+<<<<<<< HEAD
             <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 p-1 shadow-2xl animate-glow">
               <div className={`w-full h-full rounded-full overflow-hidden ${
                 darkMode ? 'bg-gray-800' : 'bg-slate-200'
@@ -89,6 +90,14 @@ function Hero({ darkMode }: HeroProps) {
                   onLoad={() => setImageLoaded(true)}
                 />
               </div>
+=======
+            <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 p-1 shadow-2xl overflow-hidden">
+              <img
+                src="/profile.jpg"
+                alt="Profile"
+                className="w-full h-full object-cover rounded-full"
+              />
+>>>>>>> 03ae68f52247fa9160533dcdeaf5494caeb0f830
             </div>
           </div>
 

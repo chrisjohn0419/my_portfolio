@@ -1,4 +1,8 @@
 import { User, Heart, Code } from 'lucide-react';
+import Pic1 from "../assets/images/pic1.jpg";
+import Pic2 from "../assets/images/pic2.jpg";
+import Pic3 from "../assets/images/pic3.jpg";
+
 
 interface AboutProps {
   darkMode?: boolean;
@@ -61,13 +65,13 @@ function About({ darkMode = false }: AboutProps) {
           <div className="relative w-full h-80" style={{ perspective: '1000px' }}>
             <div className="carousel-container">
               <div className="carousel-item" style={{ '--i': 0 } as React.CSSProperties}>
-                <img src="/images/pic1.jpg" alt="pic1" className="w-full h-full object-cover rounded-xl shadow-lg" />
+                <img src={Pic1} alt="Pic1" className="w-full h-full object-cover rounded-xl shadow-lg" />
               </div>
               <div className="carousel-item" style={{ '--i': 1 } as React.CSSProperties}>
-                <img src="/images/pic2.jpg" alt="pic2" className="w-full h-full object-cover rounded-xl shadow-lg" />
+                <img src={Pic2} alt="Pic2" className="w-full h-full object-cover rounded-xl shadow-lg" />
               </div>
               <div className="carousel-item" style={{ '--i': 2 } as React.CSSProperties}>
-                <img src="/images/pic3.jpg" alt="pic3" className="w-full h-full object-cover rounded-xl shadow-lg" />
+                <img src={Pic3} alt="Pic3" className="w-full h-full object-cover rounded-xl shadow-lg" />
               </div>
             </div>
           </div>

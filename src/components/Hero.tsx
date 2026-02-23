@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import Profile from '../assets/images/profile.png';
 
 interface HeroProps {
   darkMode: boolean;
@@ -77,7 +78,7 @@ function Hero({ darkMode }: HeroProps) {
           <div className="mb-8 inline-block">
             <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 p-1 shadow-2xl overflow-hidden">
               <img
-                src="/profile.png"
+                src={Profile}
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full"
               />
@@ -179,20 +180,7 @@ function Hero({ darkMode }: HeroProps) {
 View My Work
             </button>
           </div>
-
-        <a
-          href="/Resume.pdf"
-          download="John-Christian-Resume.pdf"
-          className={`fixed bottom-8 right-8 z-40 flex items-center gap-2 px-4 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 ${
-            darkMode
-              ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-blue-400'
-              : 'bg-white text-slate-700 hover:bg-slate-100 hover:text-blue-600'
-          }`}
-        >
-Resume <ArrowDown size={18} />
-        </a>
-
-      </div>
+        </div>
       </div>
     </section>
   );

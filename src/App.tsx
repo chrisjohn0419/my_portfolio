@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Download } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,6 +9,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Resume from './assets/files/Resume.pdf';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -53,6 +55,13 @@ function App() {
         : 'bg-gradient-to-br from-slate-50 to-slate-100'
     }`}>
       <Header activeSection={activeSection} darkMode={darkMode} setDarkMode={setDarkMode} />
+      <a
+        href={Resume}
+        download="John-Christian-Resume.pdf"
+        className="fixed bottom-8 right-8 z-50 flex items-center gap-2 px-4 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700"
+      >
+        Resume <Download size={18} />
+      </a>
       <Hero darkMode={darkMode} />
       <About darkMode={darkMode} />
       <Skills darkMode={darkMode} />

@@ -1,26 +1,43 @@
 import { Code2, Palette, MessageSquare, Users, Zap, Target } from 'lucide-react';
+import { IconType } from 'react-icons';
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaReact,
+  FaLaravel,
+  FaJs,
+} from "react-icons/fa";
+import { FaPhp } from 'react-icons/fa6';
+import { SiMysql } from 'react-icons/si';
+
 
 interface SkillsProps {
   darkMode?: boolean;
+  icon: IconType;
 }
 
 function Skills({ darkMode = false }: SkillsProps) {
-  const technicalSkills = [
-    { name: 'HTML/CSS', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'React', level: 80 },
-    { name: 'TypeScript', level: 75 },
-    { name: 'Node.js', level: 70 },
-    { name: 'Tailwind CSS', level: 85 },
+    const frontendSkills = [
+    { name: 'HTML', icon: FaHtml5 },
+    { name: 'CSS', icon: FaCss3Alt },
+    { name: 'Bootstrap', icon: FaBootstrap },
+    { name: 'Laravel', icon: FaLaravel },
+    { name: 'JavaScript', icon: FaJs },
+    { name: 'React', icon: FaReact },
+  ];
+
+  const backendSkills = [
+     { name: 'PHP', icon: FaPhp },
+     { name: 'MySQL', icon: SiMysql },
+     { name: 'Node.js', icon: FaJs },
+     { name: 'Rest Api', icon: Code2 },
   ];
 
   const tools = [
     'Git & GitHub',
     'VS Code',
-    'Figma',
-    'Adobe XD',
     'Postman',
-    'npm/yarn',
   ];
 
   const softSkills = [
@@ -40,31 +57,60 @@ function Skills({ darkMode = false }: SkillsProps) {
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-12">
-          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow">
-<div className="flex items-center gap-3 mb-6">
-              <div className={`p-2 rounded-lg ${darkMode ? 'bg-blue-900/50' : 'bg-blue-50'}`}>
-                <Code2 className="text-blue-600" size={24} />
-              </div>
-              <h3 className={`text-2xl font-bold ${darkMode ? 'text-gray-100' : 'text-slate-800'}`}>Technical Skills</h3>
+<div className="grid lg:grid-cols-2 gap-12 mb-12">
+        <div className={`rounded-2xl p-8 shadow-md hover:shadow-2xl transition-shadow ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <div className="flex items-center gap-3 mb-6">
+            <div className={`p-2 rounded-lg ${darkMode ? 'bg-blue-900/50' : 'bg-blue-50'}`}>
+              <Code2 className="text-blue-600" size={24} />
             </div>
-            <div className="space-y-6">
-              {technicalSkills.map((skill) => (
-                <div key={skill.name}>
-                  <div className="flex justify-between mb-2">
-<span className={`${darkMode ? 'text-gray-300' : 'text-slate-700'} font-medium`}>{skill.name}</span>
-                    <span className={`${darkMode ? 'text-gray-500' : 'text-slate-500'}`}>{skill.level}%</span>
-                  </div>
-                  <div className={`h-3 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-slate-100'}`}>
-                    <div
-                      className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <h3 className={`text-2xl font-bold ${darkMode ? 'text-blue-400' : 'text-slate-800'}`}>
+              Frontend Development
+            </h3>
           </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {frontendSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className={`flex flex-col items-center gap-2 p-3 rounded-lg hover:scale-105 transition-all duration-300 ${
+                  darkMode ? 'bg-gray-800 hover:bg-gray-600' : ''
+                }`}
+              >
+                <skill.icon size={32} className="text-blue-600" />
+                <span className={`${darkMode ? 'text-gray-300' : 'text-slate-700'} text-xs`}>
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+          <div className={`rounded-2xl p-8 shadow-md hover:shadow-2xl transition-shadow ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <div className="flex items-center gap-3 mb-6">
+            <div className={`p-2 rounded-lg ${darkMode ? 'bg-blue-900/50' : 'bg-blue-50'}`}>
+              <Code2 className="text-blue-600" size={24} />
+            </div>
+            <h3 className={`text-2xl font-bold ${darkMode ? 'text-blue-400' : 'text-slate-800'}`}>
+              Backend Development
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {backendSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className={`flex flex-col items-center gap-2 p-3 rounded-lg hover:scale-105 transition-all duration-300 ${
+                  darkMode ? 'bg-gray-800 hover:bg-gray-600' : ''
+                }`}
+              >
+                <skill.icon size={32} className="text-blue-600" />
+                <span className={`${darkMode ? 'text-gray-300' : 'text-slate-700'} text-xs`}>
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
 
 <div className={`rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
             <div className="flex items-center gap-3 mb-6">

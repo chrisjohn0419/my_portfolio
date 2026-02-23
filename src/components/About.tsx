@@ -62,7 +62,7 @@ function About({ darkMode = false }: AboutProps) {
             </div>
           </div>
 
-          <div className="relative w-full h-80" style={{ perspective: '1000px' }}>
+          <div className="relative w-full aspect-[16/9] max-w-4xl mx-auto" style={{ perspective: '1000px' }}>
             <div className="carousel-container">
               <div className="carousel-item" style={{ '--i': 0 } as React.CSSProperties}>
                 <img src={Pic1} alt="Pic1" className="w-full h-full object-cover rounded-xl shadow-lg" />

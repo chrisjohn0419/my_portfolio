@@ -92,7 +92,7 @@
 
   .carousel-item {
     position: absolute;
-    width: 400px;
+    width: 300px;
     height: 400px;
     left: 50%;
     top: 50%;
@@ -100,8 +100,8 @@
       translateX(-50%) 
       translateY(-50%) 
       rotateY(calc(var(--i) * 120deg)) 
-      translateZ(200px);
-    transition: all 0.3s ease;
+      translateZ(100px);
+    transition: all 0.1s ease;
   }
 
   .carousel-container:hover .carousel-item {

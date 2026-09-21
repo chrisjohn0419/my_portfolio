@@ -27,6 +27,7 @@ function Education({ darkMode = false }: EducationProps) {
       track: "Track A Networking",
       highlights: [
         'BootCamp: Programmers\' Varsity Camp 2023 "Transforming Yourself"',
+        "Member, [Programmers Varsity] (2020 - 2024)",
       ],
     },
   ];

@@ -60,7 +60,7 @@ function Skills({ darkMode = false }: SkillsProps) {
     },
     {
       icon: Zap,
-      name: "Fast Learner",
+      name: "Resourcefulness",
       description: "Quick to adapt to new technologies",
     },
     {

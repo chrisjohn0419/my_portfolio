@@ -159,7 +159,7 @@ function Projects({ darkMode = false }: ProjectsProps) {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
+                  {/* <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -167,7 +167,7 @@ function Projects({ darkMode = false }: ProjectsProps) {
                   >
                     <Github size={18} />
                     <span className="text-sm font-medium">Code</span>
-                  </a>
+                  </a> */}
                   <a
                     href={project.demo}
                     target="_blank"
